@@ -1,4 +1,11 @@
 <div>
-  <h2>Hello {{home.name}}</h2>
-  <button ng-click="home.changeName()">Change</button>
+  <div ng-if="home.suggestion">
+    <h2 class="md-display-2">Have you watched:</h2>
+    <h1 class="md-display-4">{{ home.suggestion.name}}</h1>
+    <md-button ng-click="home.markSeenIt()" class="md-raised">Yes - I've seen it!</md-button>
+    <md-button ng-click="home.markNotInterested()" class="md-raised md-accent">No - Not interested</md-button>
+    <br />
+    <br />
+    <md-button ng-click="home.markJustWatchedIt()" class="md-primary">Just Watched It!</md-button>
+  </div>
 </div>
