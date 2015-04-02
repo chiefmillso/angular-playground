@@ -1,0 +1,32 @@
+<!-- index.html -->
+<html>
+
+<head>
+  <title>Angular 2 Quickstart</title>
+  <base href="src/" />
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="/bower_components/angular-material/angular-material.min.css"></link>
+</head>
+
+<body ng-app="myApp" ng-controller="AppController">
+  <div layout="column">
+    <section layout="row" flex>
+      <nav ng-viewport="navigation" tabindex="-1"></nav>
+      <md-content ng-viewport="main" flex class="md-padding" role="main" />
+    </section>
+  </div>
+  <script src="/bower_components/angular/angular.min.js"></script>
+  <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
+  <script src="/bower_components/angular-aria/angular-aria.min.js"></script>
+  <script src="/bower_components/angular-material/angular-material.min.js"></script>
+
+  <script src="/dist/router.es5.js"></script>
+
+  <script src="./app.mdl.js"></script>
+  <script src="./components/home/home.ctrl.js"></script>
+  <script src="./components/films/films.ctrl.js"></script>
+  <script src="./components/navigation/navigation.ctrl.js"></script>
+
+</body>
+
+</html>
