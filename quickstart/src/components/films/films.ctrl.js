@@ -1,20 +1,9 @@
-angular.module('myApp.films', [])
-  .controller('FilmsController', ['$http', function($http) {
+angular.module('myApp.films', ['myApp.common.services'])
+  .controller('FilmsController', ['$http', 'films.svc', function($http, filmsSvc) {
     var _this = this;
     _this.items = [];
-
-    $http.get('/src/assets/films.json')
-      .success(function(data, status, headers, config) {
-        for (var i = 0; i < data.length; i++) {
-          _this.items.push({
-            id: i,
-            name: data[i],
-            watched: false
-          });
-        }
-      })
-      .error(function(data, status, headers, config) {
-
-      });
-
+    var result = filmsSvc;
+    result.then(function(d) {
+      _this.items = _this.items.concat(d);
+    });
   }]);
