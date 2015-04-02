@@ -1,17 +1,20 @@
 angular.module('myApp.films', [])
-  .controller('FilmsController', function() {
-    this.films = [];
+  .controller('FilmsController', ['$http', function($http) {
+    var _this = this;
+    _this.items = [];
 
-    this.films.push({
-      id: 1,
-      name: 'The Green Mile',
-      watched: false
-    });
+    $http.get('/src/assets/films.json')
+      .success(function(data, status, headers, config) {
+        for (var i = 0; i < data.length; i++) {
+          _this.items.push({
+            id: i,
+            name: data[i],
+            watched: false
+          });
+        }
+      })
+      .error(function(data, status, headers, config) {
 
-    this.films.push({
-      id: 2,
-      name: 'The Shawshank Redemption',
-      watched: true
-    });
+      });
 
-  });
+  }]);

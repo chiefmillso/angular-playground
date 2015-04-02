@@ -1,1 +1,9 @@
-<h2>Films</h2>
+<md-list>
+  <md-subheader class="md-no-sticky">All Films</md-subheader>
+  <md-item class="md-3-line" ng-repeat="item in films.items">
+    <div class="md-item-text">
+      <h3>{{ item.name }}</h3>
+
+    </div>
+  </md-item>
+</md-list>

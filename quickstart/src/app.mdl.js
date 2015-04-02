@@ -35,6 +35,7 @@ function AppController($router) {
   }, {
     path: '/films',
     components: {
+      navigation: 'navigation',
       main: 'films'
     }
   }]);
